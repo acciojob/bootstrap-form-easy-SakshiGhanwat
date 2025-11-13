@@ -3,160 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Internship Form</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
-      margin: 0;
-      padding: 40px;
-    }
-
-    .form-container {
-      background: #fff;
-      padding: 30px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      max-width: 800px;
-      margin: auto;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 25px;
-    }
-
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-bottom: 15px;
-    }
-
-    .form-group {
-      flex: 1;
-      min-width: 220px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    label {
-      margin-bottom: 6px;
-      font-weight: 600;
-    }
-
-    input, select {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 15px;
-      outline: none;
-    }
-
-    input:focus, select:focus {
-      border-color: #007bff;
-    }
-
-    .checkbox {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .btn {
-      display: block;
-      width: 120px;
-      margin: 20px auto 0;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      padding: 10px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 15px;
-    }
-
-    .btn:hover {
-      background-color: #0056b3;
-    }
-
-    /* Validation styling */
-    input:invalid, select:invalid {
-      border-color: red;
-    }
-
-    input:invalid + .error,
-    select:invalid + .error,
-    .checkbox input:invalid ~ .error {
-      display: block;
-      color: red;
-      font-size: 13px;
-      margin-top: 4px;
-    }
-
-    .error {
-      display: none;
-    }
-
-  </style>
+  <title>Bootstrap Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-  <div class="form-container">
-    <h2>Internship Form</h2>
+<body class="p-4">
+
+  <div class="container">
+    <h2 class="mb-4 text-center">Intern Application Form</h2>
     <form>
-      <div class="row">
-        <div class="form-group">
-          <label for="first-name-input">First Name</label>
-          <input type="text" id="first-name-input" name="first-name" required>
-          <span class="error">First name required!</span>
-        </div>
-        <div class="form-group">
-          <label for="last-name-input">Last Name</label>
-          <input type="text" id="last-name-input" name="last-name" required>
-          <span class="error">Last name required!</span>
-        </div>
-        <div class="form-group">
-          <label for="email-input">Email Address</label>
-          <input type="email" id="email-input" name="email" placeholder="xyz@abc.com" required>
-          <span class="error">Email required!</span>
-        </div>
+
+      <!-- First Name -->
+      <div class="mb-3">
+        <label for="first-name-input" class="form-label">First Name</label>
+        <input type="text" id="first-name-input" class="form-control" required>
+        <div class="invalid-feedback">Please enter your first name.</div>
       </div>
 
-      <div class="row">
-        <div class="form-group">
-          <label for="college-input">College</label>
-          <input type="text" id="college-input" name="college" required>
-          <span class="error">Please provide a valid college.</span>
-        </div>
-        <div class="form-group">
-          <label for="graduation-year-input">Graduation Year</label>
-          <select id="graduation-year-input" name="grad-year" required>
-            <option value="">Choose...</option>
-            <option value="2020">2020</option>
-            <option value="2021">2021</option>
-            <option value="2022">2022</option>
-            <option value="2023">2023</option>
-          </select>
-          <span class="error">Please select a valid Graduation Year.</span>
-        </div>
-        <div class="form-group">
-          <label for="roll-no-input">Roll No.</label>
-          <input type="text" id="roll-no-input" name="roll-no" required>
-          <span class="error">Please provide a valid Roll no.</span>
-        </div>
+      <!-- Last Name -->
+      <div class="mb-3">
+        <label for="last-name-input" class="form-label">Last Name</label>
+        <input type="text" id="last-name-input" class="form-control" required>
+        <div class="invalid-feedback">Please enter your last name.</div>
       </div>
 
-      <div class="checkbox">
-        <input type="checkbox" id="conditions-checkbox" name="terms" required>
-        <label for="conditions-checkbox">Agree to terms and conditions</label>
-        <span class="error">You must agree before submitting.</span>
+      <!-- Email -->
+      <div class="mb-3">
+        <label for="email-input" class="form-label">Email</label>
+        <input type="email" id="email-input" class="form-control" required>
+        <div class="invalid-feedback">Please enter a valid email.</div>
       </div>
 
-      <button type="submit" class="btn">Submit form</button>
+      <!-- College -->
+      <div class="mb-3">
+        <label for="college-input" class="form-label">College</label>
+        <input type="text" id="college-input" class="form-control" required>
+        <div class="invalid-feedback">Please enter your college name.</div>
+      </div>
+
+      <!-- Graduation Year -->
+      <div class="mb-3">
+        <label for="grad-year-select" class="form-label">Graduation Year</label>
+        <select id="grad-year-select" class="form-select" required>
+          <option value="">Select year</option>
+          <option>2020</option>
+          <option>2021</option>
+          <option>2022</option>
+          <option>2023</option>
+        </select>
+        <div class="invalid-feedback">Please select your graduation year.</div>
+      </div>
+
+      <!-- Roll Number -->
+      <div class="mb-3">
+        <label for="roll-no-input" class="form-label">Roll Number</label>
+        <input type="text" id="roll-no-input" class="form-control" required>
+        <div class="invalid-feedback">Please enter your roll number.</div>
+      </div>
+
+      <!-- Terms and Conditions -->
+      <div class="form-check mb-3">
+        <input type="checkbox" id="conditions-checkbox" class="form-check-input" required>
+        <label for="conditions-checkbox" class="form-check-label">I agree to the terms and conditions</label>
+        <div class="invalid-feedback">You must agree before submitting.</div>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary">Submit</button>
+
     </form>
   </div>
+
 </body>
 </html>
 
